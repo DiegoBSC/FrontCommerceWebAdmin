@@ -1,0 +1,25 @@
+.app-loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  color: white;
+  text-align: center;
+  font-size: 60px;
+  background: rgba(39, 38, 38, 0.823);
+  transition: opacity 1000ms ease;
+}
+
+.app-loading.loaded {
+  opacity: 0;
+}
+
+.background-animated{
+    background-image: url('../../../../../assets/images/qr4t5ja.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    padding-top: auto;
+}

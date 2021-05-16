@@ -1,0 +1,56 @@
+<app-preload *ngIf="loadPage"></app-preload>
+<div class="cloud-container background-play">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-pattern">
+
+                    <div class="card-body p-4">
+                        <div class="text-center w-75 m-auto">
+                            <a href="index.html">
+                                <span><img src="assets/images/logo-dark.png" alt="" height="18"></span>
+                            </a>
+                            <h5 class="text-uppercase text-center font-bold mt-4">Iniciar Sesión</h5>
+                        </div>
+                        <form action="mt-3" [formGroup]="loginForm" (ngSubmit)="logIn()">
+
+                            <div class="form-group mb-3">
+                                <label for="emailaddress">Usuario</label>
+                                <input class="form-control" type="email" id="emailaddress" name="nick"
+                                    formControlName="nick" placeholder="Ingresa tu usuario">
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <a href="pages-recoverpw.html" class="text-muted float-right"><small>Olvidates tu
+                                        contraseña?</small></a>
+
+                                <label for="password">Contraseña</label>
+                                <input class="form-control" type="password" required="" id="password" name="password"
+                                    formControlName="password" placeholder="Ingresa tu contraseña">
+                            </div>
+
+                            <div class="form-group mb-0 text-center">
+                                <button class="btn btn-gradient btn-block" type="submit" [disabled]="!loginForm.valid">
+                                    Ingresar</button>
+                            </div>
+
+                        </form>
+
+                        <div class="row mt-4">
+                            <div class="col-sm-12 text-center">
+                                <p class="text-muted mb-0">No tienes una cuenta? <a href="pages-register.html"
+                                        class="text-dark ml-1"><b>Registrate</b></a></p>
+                            </div>
+                        </div>
+                    </div> <!-- end card-body -->
+                </div>
+                <!-- end card -->
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+
+    <!-- end page -->
+
+</div>
