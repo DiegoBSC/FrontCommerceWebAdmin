@@ -20,30 +20,6 @@
 
                 <li>
                     <a href="#">
-                        <i class=" fas fa-dolly-flatbed"></i>
-                        <span> Compras </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="#">Historial Compras</a></li>
-                        <li><a href="#">Agregar Compra</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="far fa-money-bill-alt"></i>
-                        <span> Ventas </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="#">Historial Ventas</a></li>
-                        <li><a href="#">Agregar Venta</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="#">
                         <i class="fe-box"></i>
                         <span> Productos </span>
                         <span class="menu-arrow"></span>
@@ -54,6 +30,33 @@
                         <li><a href="#">Impuestos</a></li>
                         <li><a href="#">Tipos</a></li>
                         <li><a href="#">Categorías</a></li>
+                    </ul>
+                </li>
+
+            
+                <li>
+                    <a href="#">
+                        <i class="far fa-money-bill-alt"></i>
+                        <span> Ventas </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="#">Historial Ventas</a></li>
+                        <li><a href="#">Agregar Venta</a></li>
+                        <li><a href="#">Clientes</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class=" fas fa-dolly-flatbed"></i>
+                        <span> Compras </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="#">Historial Compras</a></li>
+                        <li><a href="#">Agregar Compra</a></li>
+                        <li><a href="#">Proveedores</a></li>
                     </ul>
                 </li>
 
@@ -75,12 +78,12 @@
                 <li>
                     <a href="#">
                         <i class="fe-map"></i>
-                        <span> Usuarios </span>
+                        <span> Sistema </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="maps-google.html">Usuarios</a></li>
-                        <li><a href="maps-google.html">Empresa</a></li>                       
+                        <li><a href="#" [routerLink]="'user-list'" >Usuarios</a></li>
+                        <li><a href="#" [routerLink]="'company-list'">Empresa</a></li>                       
                     </ul>
                 </li>
 

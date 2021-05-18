@@ -2,15 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SystemRoutingModule } from './system-routing.module';
-import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { CompanyListComponent } from './components/company-list/company-list.component';
+import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
 
 
 @NgModule({
   declarations: [
-    // HeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserListComponent,
+    CompanyListComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     CommonModule,

@@ -16,6 +16,8 @@ import { SingupComponent } from './core/shared/components/singup/singup.componen
 import { JwtModule } from '@auth0/angular-jwt';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PreloadComponent } from './core/shared/components/preload/preload.component';
+import { HttpConfigInterceptor } from './core/interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { PreloadComponent } from './core/shared/components/preload/preload.compo
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
