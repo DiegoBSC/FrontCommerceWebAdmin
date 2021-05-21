@@ -18,12 +18,18 @@ export class CompanyListComponent extends CompanyListView implements OnInit {
 
   ngOnInit(): void {
 
-    this.listCompanies({ initDate: '', endDate: '', page: 0, size: 15, mainFilter: '', userId: '' });
+    this.listCompanies({ initDate: '', endDate: '', page: 0, size: 5  , mainFilter: '', userId: '' });
 
   }
 
   listCompanies(filter: DocumentFilterModel) {
-    this.filter = filter; this.companyListPresenter.getCompanies();
+    this.filter = filter;
+    this.companyListPresenter.getCompanies();
   }
+
+  changePage(value: any){
+    this.filter.page = value;
+    this.companyListPresenter.getCompanies();
+}
 
 }

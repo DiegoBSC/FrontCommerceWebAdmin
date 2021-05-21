@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { CompanyListComponent } from './components/company-list/company-list.component';
 import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PaginatorComponent } from './shared/paginator/paginator.component';
 
 
 @NgModule({
@@ -15,11 +17,13 @@ import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
     UserListComponent,
     CompanyListComponent,
     BreadcrumbComponent,
+    PaginatorComponent,
   ],
   imports: [
     CommonModule,
     SystemRoutingModule,
-    RouterModule
+    RouterModule,
+    NgbModule
   ]
 })
 export class SystemModule { }

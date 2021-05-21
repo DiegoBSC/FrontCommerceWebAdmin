@@ -1,1 +1,67 @@
 <app-breadcrumb [titleRoute]="'Empresa'"></app-breadcrumb>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card-box">
+            <div class="row d-flex justify-content-between mx-2">
+
+                <div class="form-group row ">
+                    <label class="col-4 col-form-label">Show: </label>
+                    <div class="col-8">
+                        <div class="form-group ">
+                            <select id="inputState" class="form-control">
+                                <option></option>
+                                <option>5</option>
+                                <option>10</option>
+                                <option>50</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-2 col-form-label">Buscar: </label>
+                    <div class="col-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Filtro" aria-label="Filtro" aria-describedby="basic-addon1">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-sm mb-1">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre Empresa</th>
+                            <th>Identificación</th>
+                            <th>Estado</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of companiesItem; let i = index ">
+                            <td scope="row">{{i + 1}} </td>
+                            <td>{{item.nameCompany}}</td>
+                            <td>{{item.identification}}</td>
+                            <td>{{item.status}}</td>
+                            <td class="button-list text-center">
+                                <button type="button" class="btn btn-outline-success btn-sm"> <i
+                                        class="far fa-edit"></i>
+                                </button>
+                                <button type="button" class="btn btn-outline-danger  btn-sm"> <i
+                                        class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <app-paginator [totalElements]="totalElements" [page]="filter.page" [size]="filter.size"
+                    (changePageEmitt)="changePage($event)"></app-paginator>
+            </div>
+        </div>
+    </div>
+</div>

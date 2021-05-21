@@ -1,0 +1,12 @@
+<ngb-pagination class="d-flex justify-content-end" [collectionSize]="totalElements" [(page)]="page"
+    aria-label="Default pagination" [boundaryLinks]="true" [maxSize]="maxSize" [pageSize]="size"
+    (pageChange)="changePagePaginator($event)">
+
+    <ng-template ngbPaginationFirst><i class="mdi mdi-arrow-collapse-left"></i></ng-template>
+    <ng-template ngbPaginationLast><i class="mdi mdi-arrow-collapse-right"></i></ng-template>
+    <ng-template ngbPaginationPrevious><i class="mdi mdi-arrow-left"></i></ng-template>
+    <ng-template ngbPaginationNext><i class="mdi mdi-arrow-right"></i></ng-template>
+    <ng-template ngbPaginationEllipsis>...</ng-template>
+    <ng-template ngbPaginationNumber let-page>{{ page }}</ng-template>
+
+</ngb-pagination>

@@ -11,7 +11,8 @@ export class CompanyService {
   constructor(private http: HttpClient) { }
 
   listCompanies(filter: DocumentFilterModel) {
-    let filters = '?page=' + filter.page + '&size=' + filter.size;
+    const page = filter.page === 0 ? filter.page : filter.page - 1;
+    let filters = '?page=' + page + '&size=' + filter.size;
     if (filter.mainFilter) {
       filters += '&mainFilter=' + filter.mainFilter;
     }
