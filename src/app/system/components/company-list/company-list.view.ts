@@ -9,4 +9,6 @@ export abstract class CompanyListView extends View {
     gettingDocuments = false;
     gettingCsv = false;
     company: CompanyModel;
+    companySelect: CompanyModel;
+    loadData: boolean;
 }

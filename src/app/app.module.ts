@@ -28,7 +28,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     SidebarComponent,
     LoginComponent,
     SingupComponent,
-    PreloadComponent
+    PreloadComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     ReactiveFormsModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true },],
+    { provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

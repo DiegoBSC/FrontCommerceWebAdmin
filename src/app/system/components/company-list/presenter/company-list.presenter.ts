@@ -29,11 +29,21 @@ export class CompanyListPresenter {
         };
 
         this.companyService.listCompanies(filter).subscribe((res: PaginatorModel<CompanyModel[]>) => {
+            this.view.loadData = true;
             this.view.companiesItem = [];
             res.data[0].forEach((e) => {
                 this.view.companiesItem.push(e);
             });
             this.view.totalElements = res.totalElements;
+        });
+    }
+
+    deleteCompany(id: any) {
+        const companyDelete: CompanyModel = {};
+        companyDelete.id = id;
+        this.companyService.deleteCompany(companyDelete).subscribe((res: any) => {
+            this.view.showInfo('La empresa fue eliminada');
+            this.getCompanies();
         });
     }
 

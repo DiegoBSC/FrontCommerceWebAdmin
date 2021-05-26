@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DocumentFilterModel } from '../models/document-filter.model';
 import { environment } from '../../../environments/environment.prod';
+import { CompanyModel } from '../models/company.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,13 @@ export class CompanyService {
       filters += '&userId=' + filter.userId;
     }
     return this.http.get(environment.apiUrl + '/company/list' + filters);
+  }
+
+  saveCompany(item: CompanyModel) {
+    return this.http.post(environment.apiUrl + '/company/create', item);
+  }
+
+  deleteCompany(companyDelete: any) {
+    return this.http.post(environment.apiUrl + '/company/delete', companyDelete);
   }
 }

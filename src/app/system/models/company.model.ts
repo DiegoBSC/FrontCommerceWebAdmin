@@ -1,6 +1,6 @@
 export interface CompanyModel {
     id?: string;
-    createDate?: Date;
+    createdDate?: Date;
     nameCompany?: string;
     identification?: string;
     status?: string;

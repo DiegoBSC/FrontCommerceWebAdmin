@@ -9,6 +9,11 @@ import { CompanyListComponent } from './components/company-list/company-list.com
 import { BreadcrumbComponent } from './shared/breadcrumb/breadcrumb.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PaginatorComponent } from './shared/paginator/paginator.component';
+import { FilterTableComponent } from './shared/filter-table/filter-table.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActivePipe } from '../pipes/active.pipe';
+import { ModalCompanyAddComponent } from './modal/modal-company-add/modal-company-add.component';
+import { ModalConfirmComponent } from './modal/modal-confirm/modal-confirm.component';
 
 
 @NgModule({
@@ -18,12 +23,18 @@ import { PaginatorComponent } from './shared/paginator/paginator.component';
     CompanyListComponent,
     BreadcrumbComponent,
     PaginatorComponent,
+    FilterTableComponent,
+    ActivePipe,
+    ModalCompanyAddComponent,
+    ModalConfirmComponent
   ],
   imports: [
     CommonModule,
     SystemRoutingModule,
     RouterModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SystemModule { }
