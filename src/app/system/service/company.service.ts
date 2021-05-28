@@ -30,4 +30,8 @@ export class CompanyService {
   deleteCompany(companyDelete: any) {
     return this.http.post(environment.apiUrl + '/company/delete', companyDelete);
   }
+
+  getCompaniesByAdmin(idAdmin: string) {
+    return this.http.get(environment.apiUrl + '/company/findByUserId?userId=' + idAdmin);
+  }
 }

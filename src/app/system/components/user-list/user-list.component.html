@@ -3,10 +3,11 @@
     <div class="col-lg-12">
         <div class="card-box">
             <div class="row d-flex justify-content-end mx-2 my-2">
-                <app-modal-company-add [companySelect]="null" (closetModal)="getDataTable()"></app-modal-company-add>
+                <!-- <app-modal-company-add [companySelect]="null" (closetModal)="getDataTable()"></app-modal-company-add> -->
+                <app-modal-user-add [userModelSelect]="null" ></app-modal-user-add>
             </div>
-            <!-- <app-filter-table [documentFilterModel]="filter" (changeFilterEmitt)="changeFilter($event)" > -->
-            <!-- </app-filter-table> -->
+            <app-filter-table [documentFilterModel]="filter" (changeFilterEmitt)="changeFilter($event)" >
+            </app-filter-table>
             <div class="table-responsive">
                 <table class="table table-hover table-sm mb-1">
                     <thead>
@@ -42,8 +43,8 @@
                         <h1 class="py-2">Cargando <i class="fas fa-spinner fa-spin"></i></h1>
                     </div>
                 </table>
-                <!-- <app-paginator [totalElements]="totalElements" [page]="filter.page" [size]="filter.size"
-                    (changePageEmitt)="changePage($event)"></app-paginator> -->
+                <app-paginator [totalElements]="totalElements" [page]="filter.page" [size]="filter.size"
+                    (changePageEmitt)="changePage($event)"></app-paginator>
             </div>
         </div>
     </div>

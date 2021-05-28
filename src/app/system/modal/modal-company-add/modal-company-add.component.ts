@@ -10,9 +10,7 @@ import { ModalCompanyPresenter } from './presenter/modal-company.presenter';
   templateUrl: './modal-company-add.component.html',
   styleUrls: ['./modal-company-add.component.css'],
 })
-export class ModalCompanyAddComponent
-  extends ModalCompanyView
-  implements OnInit  {
+export class ModalCompanyAddComponent extends ModalCompanyView implements OnInit {
   @Input() companySelect;
   @Output() closetModal = new EventEmitter<boolean>();
 

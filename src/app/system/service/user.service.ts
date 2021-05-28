@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { DocumentFilterModel } from '../models/document-filter.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment.prod';
+import { UserModel } from '../../home/models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,9 @@ export class UserService {
       filters += '&userId=' + filter.userId;
     }
     return this.http.get(environment.apiUrl + '/users/list' + filters);
+  }
+
+  saveUser(userSave: UserModel){
+    return this.http.post(environment.apiUrl + '/users/createUser', userSave);
   }
 }

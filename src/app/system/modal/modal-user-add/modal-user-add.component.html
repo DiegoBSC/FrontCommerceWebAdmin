@@ -1,0 +1,48 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Usuario</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" [formGroup]="userForm">
+            <div class="form-group">
+                <div class="col-12">
+                    <label for="username">Nombre: </label>
+                    <input class="form-control" type="text" id="name" formControlName="name" placeholder="Nombres">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-12">
+                    <label for="emailaddress">Usuario: </label>
+                    <input class="form-control" type="text" id="nick" placeholder="Nombre de Usuario"
+                        formControlName="nick">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-12">
+                    <label for="emailaddress">Email: </label>
+                    <input class="form-control" type="email" id="email" placeholder="Email" formControlName="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-12">
+                    <label for="emailaddress">Clave: </label>
+                    <input class="form-control" type="text" id="dni" placeholder="Clave" formControlName="password">
+                </div>
+            </div>
+        </form>
+        <a href="#" class="badge badge-primary">Primary</a>
+
+
+        <p *ngFor="let item of companiesAdmin">{{item.nameCompany}}</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" (click)="modal.close()">Guardar</button>
+    </div>
+</ng-template>
+
+<!-- <button *ngIf="companySelect" class="btn btn-outline-success btn-sm" (click)="open(content)"> <i class="far fa-edit"></i></button> -->
+<button *ngIf="!userModelSelect" class="btn btn-outline-primary btn" (click)="open(content)"><i class="fa fa-user"></i>
+    Agregar</button>

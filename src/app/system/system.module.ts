@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivePipe } from '../pipes/active.pipe';
 import { ModalCompanyAddComponent } from './modal/modal-company-add/modal-company-add.component';
 import { ModalConfirmComponent } from './modal/modal-confirm/modal-confirm.component';
+import { ModalUserAddComponent } from './modal/modal-user-add/modal-user-add.component';
+import { TagInputModule } from 'ngx-chips';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { ModalConfirmComponent } from './modal/modal-confirm/modal-confirm.compo
     FilterTableComponent,
     ActivePipe,
     ModalCompanyAddComponent,
-    ModalConfirmComponent
+    ModalConfirmComponent,
+    ModalUserAddComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +37,8 @@ import { ModalConfirmComponent } from './modal/modal-confirm/modal-confirm.compo
     RouterModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TagInputModule
   ]
 })
 export class SystemModule { }
