@@ -58,7 +58,6 @@ export class ModalCompanyAddComponent
     this.company.nameCompany = this.companyForm.value.nameCompany;
     await this.modalCompanyPresenter.saveCompany(this.company);
     this.closetModal.emit(true);
-
   }
 
 }

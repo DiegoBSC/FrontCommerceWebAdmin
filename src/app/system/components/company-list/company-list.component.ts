@@ -12,9 +12,6 @@ import { CompanyModel } from '../../models/company.model';
   styleUrls: ['./company-list.component.css']
 })
 export class CompanyListComponent extends CompanyListView implements OnInit {
-  @ViewChild('modalView') modalView;
-
-  changeData = 0;
 
   constructor(private companyListPresenter: CompanyListPresenter, toastr: ToastrService) {
     super(toastr);
@@ -24,15 +21,6 @@ export class CompanyListComponent extends CompanyListView implements OnInit {
   ngOnInit(): void {
     this.getDataTable();
 
-  }
-
-  modalResponse(value: boolean) {
-    if (value) {
-      this.ngOnInit();
-      this.companySelect = null;
-      return;
-    }
-    this.companySelect = null;
   }
 
   listCompanies(filter: DocumentFilterModel) {
@@ -58,7 +46,6 @@ export class CompanyListComponent extends CompanyListView implements OnInit {
   }
 
   deleteCompany(event) {
-    console.log(event);
     this.companyListPresenter.deleteCompany(event);
   }
 

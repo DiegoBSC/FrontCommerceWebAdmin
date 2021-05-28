@@ -1,11 +1,11 @@
 import { View } from '../../../core/mvp/view';
 import { DocumentFilterModel } from '../../models/document-filter.model';
-import { CompanyModel } from '../../models/company.model';
+import { UserModel } from '../../../home/models/user.model';
 
-export abstract class CompanyListView extends View {
+export abstract class UserListView extends View {
     filter: DocumentFilterModel;
     totalElements: number;
-    companiesItem: CompanyModel[] = [];
-    company: CompanyModel;
+    usersItem: UserModel[] = [];
+    user: UserModel;
     loadData: boolean;
 }
