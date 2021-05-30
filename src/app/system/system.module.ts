@@ -16,6 +16,8 @@ import { ModalCompanyAddComponent } from './modal/modal-company-add/modal-compan
 import { ModalConfirmComponent } from './modal/modal-confirm/modal-confirm.component';
 import { ModalUserAddComponent } from './modal/modal-user-add/modal-user-add.component';
 import { TagInputModule } from 'ngx-chips';
+import { CatalogsComponent } from './components/catalogs/catalogs.component';
+import { ModalCatalogAddComponent } from './modal/modal-catalog-add/modal-catalog-add.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { TagInputModule } from 'ngx-chips';
     ActivePipe,
     ModalCompanyAddComponent,
     ModalConfirmComponent,
-    ModalUserAddComponent
+    ModalUserAddComponent,
+    CatalogsComponent,
+    ModalCatalogAddComponent
   ],
   imports: [
     CommonModule,

@@ -5,6 +5,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuardService } from '../core/shared/data/auth-guard.service';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { CompanyListComponent } from './components/company-list/company-list.component';
+import { CatalogsComponent } from './components/catalogs/catalogs.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuardService] },
       { path: 'user-list', component: UserListComponent , canActivate: [AuthGuardService] },
       { path: 'company-list', component: CompanyListComponent , canActivate: [AuthGuardService] },
+      { path: 'catalogs', component: CatalogsComponent , canActivate: [AuthGuardService] },
       { path: '**', pathMatch: 'full', redirectTo: 'dashboard' },
     ]
   },

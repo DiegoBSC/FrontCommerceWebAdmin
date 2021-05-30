@@ -1,0 +1,32 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Datos</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" [formGroup]="catalogForm">
+            <div class="form-group">
+                <div class="col-12">
+                    <label for="username">Empresa: </label>
+                    <input class="form-control" type="text" id="name" formControlName="idCompany"
+                        placeholder="Nombre Comercial / Razón Social">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-12">
+                    <label for="emailaddress">Nombre: </label>
+                    <input class="form-control" type="text" id="dni" placeholder="Nombre"
+                        formControlName="name">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" (click)="modal.close()">Guardar</button>
+    </div>
+</ng-template>
+
+<button *ngIf="catalogSelect" class="btn btn-outline-success btn-sm" (click)="open(content)"> <i class="far fa-edit"></i></button>
+<button *ngIf="!catalogSelect" class="btn btn-outline-primary btn" (click)="open(content)"><i class="mdi mdi-bank-outline"></i> Agregar</button>
