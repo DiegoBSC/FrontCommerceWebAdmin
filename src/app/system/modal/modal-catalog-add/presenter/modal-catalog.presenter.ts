@@ -33,14 +33,13 @@ export class ModalCatalogPresenter {
 
     async saveCatalog(catalogSave: CatalogsModel) {
         this.view.catalog = catalogSave;
-
         const user: UserModel = this.authService.getCurrentUser();
         this.view.submited = true;
-        this.view.catalog.userId = user.id;
         await this.catalogService.saveCatalog(this.view.catalog).toPromise().then(
             (resp: any) => {
                 this.view.showInfo('Registro guardado con éxito');
                 this.view.submited = false;
+                this.view.resp = true;
             }
         ).catch(
             (error) => {

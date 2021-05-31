@@ -1,6 +1,6 @@
 export interface CatalogsModel {
     id?: string;
-    idCompany?: string;
+    companyId?: string;
     createdDate?: Date;
     name?: string;
     status?: string;

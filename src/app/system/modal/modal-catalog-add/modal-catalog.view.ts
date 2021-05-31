@@ -7,4 +7,5 @@ export abstract class ModalCatalogView extends View {
     submited = false;
     catalog: CatalogsModel = {};
     companies: CompanyModel[] = [];
+    resp: boolean = false;
 }

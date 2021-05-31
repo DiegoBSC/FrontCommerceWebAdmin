@@ -19,16 +19,8 @@ export class CatalogsService {
     return this.http.post(environment.apiUrl + '/catalog/delete', catalogDelete);
   }
 
-  listCatalogs(filter: DocumentFilterModel) {
-    const page = filter.page === 0 ? filter.page : filter.page - 1;
-    let filters = '?page=' + page + '&size=' + filter.size;
-    if (filter.mainFilter) {
-      filters += '&mainFilter=' + filter.mainFilter;
-    }
-    if (filter.userId) {
-      filters += '&userId=' + filter.userId;
-    }
-    return this.http.get(environment.apiUrl + '/findAllByCompany' + filters);
+  listCatalogs() {
+    return this.http.get(environment.apiUrl + '/catalog/findAll');
   }
 
 }

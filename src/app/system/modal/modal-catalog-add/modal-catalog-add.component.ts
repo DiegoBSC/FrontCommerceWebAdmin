@@ -37,7 +37,7 @@ export class ModalCatalogAddComponent extends ModalCatalogView implements OnInit
   open(content) {
     this.catalog = this.catalogSelect;
     this.catalogForm.patchValue({
-      nameCompany: this.catalog?.idCompany,
+      nameCompany: this.catalog?.companyId,
       identification: this.catalog?.name,
     });
 
@@ -52,16 +52,17 @@ export class ModalCatalogAddComponent extends ModalCatalogView implements OnInit
   }
 
   async saveCatalog() {
-    this.catalog.idCompany = this.catalogForm.value.idCompany;
+    this.catalog.companyId = this.catalogForm.value.idCompany;
     this.catalog.name = this.catalogForm.value.name;
     await this.modalCatalogPresenter.saveCatalog(this.catalog);
+    if (this.modalCatalogPresenter.view.resp) { this.catalogForm.reset() }
     this.closetModal.emit(true);
   }
 
-  async getAllCompanies(){
+  async getAllCompanies() {
     this.modalCatalogPresenter.getAllCompanies();
   }
 
-  
+
 
 }
