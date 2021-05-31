@@ -3,6 +3,7 @@ import { AuthService } from "src/app/core/shared/data/auth.service";
 import { UserModel } from "src/app/home/models/user.model";
 import { CatalogsModel } from "src/app/system/models/catalogs.model";
 import { CatalogsService } from "src/app/system/service/catalogs.service";
+import { CompanyService } from "src/app/system/service/company.service";
 import { ModalCatalogView } from "../modal-catalog.view";
 
 @Injectable(
@@ -11,9 +12,24 @@ import { ModalCatalogView } from "../modal-catalog.view";
 
 export class ModalCatalogPresenter {
 
-    constructor(private catalogService: CatalogsService, private authService: AuthService){}
+    constructor(private catalogService: CatalogsService, private authService: AuthService,
+        private companyService: CompanyService) { }
 
     view: ModalCatalogView;
+
+    async getAllCompanies() {
+        const user = this.authService.getCurrentUser();
+        return this.companyService.getAllCompaniesByUser(user.id).toPromise().then(
+            (resp: any[]) => {
+                resp.forEach(data => {
+                    this.view.companies.push(data);
+                });
+            }
+        ).catch((error) => {
+            this.view.showError(error.error.message);
+            this.view.submited = false;
+        })
+    }
 
     async saveCatalog(catalogSave: CatalogsModel) {
         this.view.catalog = catalogSave;

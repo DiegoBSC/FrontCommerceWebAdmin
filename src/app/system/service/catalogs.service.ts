@@ -19,7 +19,7 @@ export class CatalogsService {
     return this.http.post(environment.apiUrl + '/catalog/delete', catalogDelete);
   }
 
-  listCatalogs(filter: DocumentFilterModel){
+  listCatalogs(filter: DocumentFilterModel) {
     const page = filter.page === 0 ? filter.page : filter.page - 1;
     let filters = '?page=' + page + '&size=' + filter.size;
     if (filter.mainFilter) {

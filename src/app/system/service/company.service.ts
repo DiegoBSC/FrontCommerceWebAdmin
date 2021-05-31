@@ -34,4 +34,9 @@ export class CompanyService {
   getCompaniesByAdmin(idAdmin: string) {
     return this.http.get(environment.apiUrl + '/company/findByUserId?userId=' + idAdmin);
   }
+
+  getAllCompaniesByUser(idUser: string) {
+    return this.http.get<any[]>(environment.apiUrl + '/company/findByUserId?userId=' + idUser)
+  }
+
 }

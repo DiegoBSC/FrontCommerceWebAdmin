@@ -10,8 +10,12 @@
             <div class="form-group">
                 <div class="col-12">
                     <label for="username">Empresa: </label>
-                    <input class="form-control" type="text" id="name" formControlName="idCompany"
-                        placeholder="Nombre Comercial / Razón Social">
+                    <select formControlName="idCompany" class="form-control cursor">
+                        <option disabled selected value>Seleccione</option>
+                        <option class="cursor" *ngFor="let item of modalCatalogPresenter.view.companies" [ngValue]="item.id">
+                          {{item.nameCompany}}
+                        </option>
+                      </select>
                 </div>
             </div>
             <div class="form-group">

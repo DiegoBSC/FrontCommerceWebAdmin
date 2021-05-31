@@ -31,6 +31,7 @@ export class ModalCatalogAddComponent extends ModalCatalogView implements OnInit
   }
 
   ngOnInit(): void {
+    this.getAllCompanies();
   }
 
   open(content) {
@@ -56,5 +57,11 @@ export class ModalCatalogAddComponent extends ModalCatalogView implements OnInit
     await this.modalCatalogPresenter.saveCatalog(this.catalog);
     this.closetModal.emit(true);
   }
+
+  async getAllCompanies(){
+    this.modalCatalogPresenter.getAllCompanies();
+  }
+
+  
 
 }
