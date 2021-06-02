@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ModalUserView } from './modal-user.view';
 import { ModalUserPresenter } from './presenter/modal-user.presenter';
-import { itemArrayByEnum } from '../../shared/utils/funtions-utils';
+import { itemArrayByEnumString } from '../../shared/utils/funtions-utils';
 import { RolEnum } from '../../models/rol.enum';
 
 @Component({
@@ -34,7 +34,7 @@ export class ModalUserAddComponent extends ModalUserView implements OnInit {
   }
 
   ngOnInit() {
-    this.rolesAll = itemArrayByEnum(RolEnum);
+    this.rolesAll = itemArrayByEnumString(RolEnum);
     this.modalUserPresenter.getCompaniesByUser();
   }
 
@@ -53,8 +53,8 @@ export class ModalUserAddComponent extends ModalUserView implements OnInit {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
       (result) => {
         this.saveUser();
-      }
-    );
+      }, (reason) => {
+      });
   }
 
   async saveUser() {
@@ -73,8 +73,11 @@ export class ModalUserAddComponent extends ModalUserView implements OnInit {
     });
   }
 
-  selectedRoles() {
-    console.log('CAmbiando los roles');
+  selectedRoles(event: any) {
+    this.user.roles = [];
+    event.forEach(element => {
+      this.user.roles.push(element.label);
+    });
   }
 
 

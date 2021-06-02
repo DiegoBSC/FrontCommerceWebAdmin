@@ -45,8 +45,8 @@
         <div class="form-group">
             <div class="col-12">
                 <label for="username">Roles: </label>
-                <app-multiselect-field [labelKey]='"label"' [primaryKey]='"value"' [textPlaceholder]='"Roles"'
-                [dropdownListInput]='rolesAll'></app-multiselect-field>
+                <app-multiselect-field [labelKey]='"value"' [primaryKey]='"value"' [textPlaceholder]='"Roles"'
+                [dropdownListInput]='rolesAll' (changeSelectedItems)="selectedRoles($event)"></app-multiselect-field>
             </div>
         </div>
 

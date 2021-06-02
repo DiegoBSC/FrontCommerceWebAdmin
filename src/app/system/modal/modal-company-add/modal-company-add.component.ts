@@ -47,8 +47,8 @@ export class ModalCompanyAddComponent extends ModalCompanyView implements OnInit
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
       (result) => {
         this.saveCompany();
-      }
-    );
+      }, (reason) => {
+      });
   }
 
   async saveCompany() {
