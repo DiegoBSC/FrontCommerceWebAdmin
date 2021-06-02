@@ -29,7 +29,7 @@ export class CatalogsPresenter {
             userId: result ? null : user.id,
         };
 
-        this.catalogService.listCatalogs().subscribe((res => {
+        this.catalogService.listCatalogs(user.id).subscribe((res => {
             this.view.loadData = true;
             this.view.catalogsItem = [];
             res.forEach((e) => {

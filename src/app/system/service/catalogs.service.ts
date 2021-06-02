@@ -19,8 +19,8 @@ export class CatalogsService {
     return this.http.post(environment.apiUrl + '/catalog/delete', catalogDelete);
   }
 
-  listCatalogs() {
-    return this.http.get<CatalogsModel[]>(environment.apiUrl + '/catalog/findAll');
+  listCatalogs(userId: string) {
+    return this.http.get<CatalogsModel[]>(environment.apiUrl + '/catalog/getCatalogsByCompanyId?userId=' + userId);
   }
 
 }
