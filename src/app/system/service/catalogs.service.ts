@@ -20,7 +20,7 @@ export class CatalogsService {
   }
 
   listCatalogs() {
-    return this.http.get(environment.apiUrl + '/catalog/findAll');
+    return this.http.get<CatalogsModel[]>(environment.apiUrl + '/catalog/findAll');
   }
 
 }

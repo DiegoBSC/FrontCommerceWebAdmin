@@ -29,14 +29,14 @@ export class CatalogsPresenter {
             userId: result ? null : user.id,
         };
 
-        this.catalogService.listCatalogs().subscribe((res: PaginatorModel<CatalogsModel[]>) => {
+        this.catalogService.listCatalogs().subscribe((res => {
             this.view.loadData = true;
             this.view.catalogsItem = [];
-            res.data[0].forEach((e) => {
+            res.forEach((e) => {
                 this.view.catalogsItem.push(e);
             });
-            this.view.totalElements = res.totalElements;
-        });
+            this.view.totalElements = res.length;
+        }));
     }
 
     deleteCatalog(id: any) {
