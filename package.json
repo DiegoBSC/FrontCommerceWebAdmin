@@ -23,6 +23,7 @@
     "@auth0/angular-jwt": "^5.0.2",
     "@ng-bootstrap/ng-bootstrap": "^9.1.1",
     "@types/jquery": "^3.5.5",
+    "angular2-multiselect-dropdown": "^5.0.4",
     "bootstrap": "^4.5.0",
     "ngx-chips": "^2.2.2",
     "ngx-toastr": "^13.2.1",

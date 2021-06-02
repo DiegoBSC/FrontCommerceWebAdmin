@@ -2,3 +2,12 @@
 .pointer{
     cursor: pointer;
 }
+
+.selected-list .c-list .c-token {
+    background: #348cd4 !important;
+    color: white !important;
+}
+
+.c-btn {
+    color: #6c757dac !important;
+}

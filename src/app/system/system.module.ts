@@ -16,6 +16,8 @@ import { ModalCompanyAddComponent } from './modal/modal-company-add/modal-compan
 import { ModalConfirmComponent } from './modal/modal-confirm/modal-confirm.component';
 import { ModalUserAddComponent } from './modal/modal-user-add/modal-user-add.component';
 import { TagInputModule } from 'ngx-chips';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { MultiselectFieldComponent } from './shared/multiselect-field/multiselect-field.component';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { TagInputModule } from 'ngx-chips';
     ActivePipe,
     ModalCompanyAddComponent,
     ModalConfirmComponent,
-    ModalUserAddComponent
+    ModalUserAddComponent,
+    MultiselectFieldComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +41,8 @@ import { TagInputModule } from 'ngx-chips';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    TagInputModule
+    TagInputModule,
+    AngularMultiSelectModule
   ]
 })
 export class SystemModule { }

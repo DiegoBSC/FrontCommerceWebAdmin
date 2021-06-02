@@ -6,4 +6,5 @@ export abstract class ModalUserView extends View {
     submited = false;
     user: UserModel = {};
     companiesAdmin: CompanyModel[] = [];
+    rolesAll: any[] = [];
 }

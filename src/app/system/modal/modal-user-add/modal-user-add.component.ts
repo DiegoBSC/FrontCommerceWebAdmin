@@ -4,7 +4,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ModalUserView } from './modal-user.view';
 import { ModalUserPresenter } from './presenter/modal-user.presenter';
-import { TagInputModule } from 'ngx-chips';
+import { itemArrayByEnum } from '../../shared/utils/funtions-utils';
+import { RolEnum } from '../../models/rol.enum';
 
 @Component({
   selector: 'app-modal-user-add',
@@ -19,7 +20,7 @@ export class ModalUserAddComponent extends ModalUserView implements OnInit {
     name: ['', [Validators.required, Validators.maxLength(150)]],
     nick: ['', [Validators.required, Validators.maxLength(150)]],
     email: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(60)]],
-    password: ['', [Validators.required, Validators.maxLength(150)]],
+    password: ['', [Validators.required, Validators.maxLength(150)]]
   });
 
   constructor(
@@ -30,16 +31,10 @@ export class ModalUserAddComponent extends ModalUserView implements OnInit {
     super(toastr);
     this.modalUserPresenter.view = this;
 
-    TagInputModule.withDefaults({
-      tagInput: {
-        placeholder: '+ Agregar Correo',
-        secondaryPlaceholder: '+ Agregar Correo',
-      }
-    });
-
   }
 
   ngOnInit() {
+    this.rolesAll = itemArrayByEnum(RolEnum);
     this.modalUserPresenter.getCompaniesByUser();
   }
 
@@ -71,7 +66,16 @@ export class ModalUserAddComponent extends ModalUserView implements OnInit {
     this.closetModal.emit(true);
   }
 
+  selectedCompanies(event: any) {
+    this.user.companies = [];
+    event.forEach(element => {
+      this.user.companies.push(element.id);
+    });
+  }
 
+  selectedRoles() {
+    console.log('CAmbiando los roles');
+  }
 
 
 }
