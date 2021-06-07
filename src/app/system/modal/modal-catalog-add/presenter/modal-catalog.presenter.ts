@@ -21,6 +21,7 @@ export class ModalCatalogPresenter {
         const user = this.authService.getCurrentUser();
         return this.companyService.getAllCompaniesByUser(user.id).toPromise().then(
             (resp: any[]) => {
+                this.view.companies = [];
                 resp.forEach(data => {
                     this.view.companies.push(data);
                 });

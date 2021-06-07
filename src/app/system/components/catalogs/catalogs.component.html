@@ -25,8 +25,8 @@
                             <td>{{item.createdDate}}</td>
                             <td>{{item.status | active}}</td>
                             <td class="button-list text-center">
-                                <app-modal-company-add [companySelect]="item" (closetModal)="getDataTable()">
-                                </app-modal-company-add>
+                                <app-modal-catalog-add [catalogSelect]="item" (closetModal)="getDataTable()">
+                                </app-modal-catalog-add>
                                 <app-modal-confirm [itemPk]="item.id" (closetModal)="deleteCompany($event)" >
                                 </app-modal-confirm>
                             </td>

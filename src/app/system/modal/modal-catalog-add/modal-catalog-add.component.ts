@@ -35,10 +35,11 @@ export class ModalCatalogAddComponent extends ModalCatalogView implements OnInit
   }
 
   open(content) {
+    debugger
     this.catalog = this.catalogSelect;
     this.catalogForm.patchValue({
-      nameCompany: this.catalog?.companyId,
-      identification: this.catalog?.name,
+      idCompany: this.catalog?.companyId,
+      name: this.catalog?.name,
     });
 
     if (this.catalog == null) {

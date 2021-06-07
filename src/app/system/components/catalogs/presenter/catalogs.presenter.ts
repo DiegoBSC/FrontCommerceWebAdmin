@@ -42,7 +42,7 @@ export class CatalogsPresenter {
     deleteCatalog(id: any) {
         const catalogsDelete: CatalogsModel = {};
         catalogsDelete.id = id;
-        this.catalogService.deleteCatalog(catalogsDelete).subscribe((res: any) => {
+        this.catalogService.deleteCatalog(catalogsDelete.id).subscribe((res: any) => {
             this.view.showInfo('Catalogo eliminado');
             this.getCatalogs();
         });

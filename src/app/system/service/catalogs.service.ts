@@ -15,8 +15,8 @@ export class CatalogsService {
     return this.http.post(environment.apiUrl + '/catalog/create', item);
   }
 
-  deleteCatalog(catalogDelete: any) {
-    return this.http.post(environment.apiUrl + '/catalog/delete', catalogDelete);
+  deleteCatalog(catalogId: string) {
+    return this.http.get(environment.apiUrl + '/catalog/delete?catalogId=' + catalogId);
   }
 
   listCatalogs(userId: string) {
