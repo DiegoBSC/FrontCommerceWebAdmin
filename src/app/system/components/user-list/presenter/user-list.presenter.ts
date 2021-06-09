@@ -38,14 +38,14 @@ export class UserListPresenter {
         });
     }
 
-    // deleteCompany(id: any) {
-    //     const companyDelete: CompanyModel = {};
-    //     companyDelete.id = id;
-    //     this.companyService.deleteCompany(companyDelete).subscribe((res: any) => {
-    //         this.view.showInfo('La empresa fue eliminada');
-    //         this.getCompanies();
-    //     });
-    // }
+    deleteUser(id: any) {
+        const userDelete: UserModel = {};
+        userDelete.id = id;
+        this.userService.deleteUser(userDelete).subscribe((res: any) => {
+            this.view.showInfo('El usuario fue eliminado');
+            this.getUsers();
+        });
+    }
 
 
 }

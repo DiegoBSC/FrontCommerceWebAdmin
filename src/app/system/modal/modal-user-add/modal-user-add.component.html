@@ -33,20 +33,24 @@
                 </div>
             </div>
 
-           
+
         </form>
         <div class="form-group">
             <div class="col-12">
                 <label for="username">Empresas que pertenece: </label>
-                <app-multiselect-field [labelKey]='"nameCompany"' [primaryKey]='"id"' [textPlaceholder]='"Empresas del Usuario"'
-                [dropdownListInput]='companiesAdmin' (changeSelectedItems)="selectedCompanies($event)"></app-multiselect-field>
+                <app-multiselect-field [labelKey]='"nameCompany"' [primaryKey]='"id"'
+                    [textPlaceholder]='"Empresas del Usuario"' [selectedItemsInit]='companiesSelected'
+                    [dropdownListInput]='modalUserPresenter.view.companiesAdmin'
+                    (changeSelectedItems)="selectedCompanies($event)"></app-multiselect-field>
             </div>
         </div>
         <div class="form-group">
             <div class="col-12">
                 <label for="username">Roles: </label>
                 <app-multiselect-field [labelKey]='"value"' [primaryKey]='"value"' [textPlaceholder]='"Roles"'
-                [dropdownListInput]='rolesAll' (changeSelectedItems)="selectedRoles($event)"></app-multiselect-field>
+                    [selectedItemsInit]='rolesSelected' [dropdownListInput]='rolesAll'
+                    (changeSelectedItems)="selectedRoles($event)">
+                </app-multiselect-field>
             </div>
         </div>
 
@@ -56,6 +60,7 @@
     </div>
 </ng-template>
 
-<!-- <button *ngIf="companySelect" class="btn btn-outline-success btn-sm" (click)="open(content)"> <i class="far fa-edit"></i></button> -->
+<button *ngIf="userModelSelect" class="btn btn-outline-success btn-sm" (click)="open(content)"> <i
+        class="far fa-edit"></i></button>
 <button *ngIf="!userModelSelect" class="btn btn-outline-primary btn" (click)="open(content)"><i class="fa fa-user"></i>
     Agregar</button>

@@ -16,6 +16,9 @@ export class ModalUserAddComponent extends ModalUserView implements OnInit {
   @Input() userModelSelect;
   @Output() closetModal = new EventEmitter<boolean>();
 
+  companiesSelected = [];
+  rolesSelected = [];
+
   userForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.maxLength(150)]],
     nick: ['', [Validators.required, Validators.maxLength(150)]],
@@ -33,12 +36,41 @@ export class ModalUserAddComponent extends ModalUserView implements OnInit {
 
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.rolesAll = itemArrayByEnumString(RolEnum);
-    this.modalUserPresenter.getCompaniesByUser();
+    await this.modalUserPresenter.getCompaniesByUser();
+  }
+
+  getCompaniesSelected() {
+    this.companiesSelected = [];
+    this.userModelSelect.companies.forEach(idCompany => {
+      let companyFind = null;
+
+      companyFind = this.modalUserPresenter.view.companiesAdmin.find(e => e.id === idCompany);
+      if (companyFind != null) {
+        this.companiesSelected.push(companyFind);
+      }
+    });
+  }
+
+  getRolesSelectect() {
+    this.userModelSelect.roles.forEach(rolUser => {
+      let rolFind = null;
+
+      rolFind = this.rolesAll.find(rol => rol.label === rolUser);
+
+      if (rolFind != null) {
+        this.rolesSelected.push(rolFind);
+      }
+    });
   }
 
   open(content) {
+    if (this.userModelSelect != null && this.userModelSelect.companies != null && this.userModelSelect.companies.length > 0) {
+      this.getCompaniesSelected();
+      this.getRolesSelectect();
+    }
+
     this.user = this.userModelSelect;
     this.userForm.patchValue({
       name: this.user?.name,
@@ -54,6 +86,8 @@ export class ModalUserAddComponent extends ModalUserView implements OnInit {
       (result) => {
         this.saveUser();
       }, (reason) => {
+        this.companiesSelected = [];
+        this.rolesSelected = [];
       });
   }
 

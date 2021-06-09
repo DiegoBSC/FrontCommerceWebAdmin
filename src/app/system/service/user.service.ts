@@ -26,4 +26,9 @@ export class UserService {
   saveUser(userSave: UserModel){
     return this.http.post(environment.apiUrl + '/users/createUser', userSave);
   }
+
+  deleteUser(userDelete: any){
+    return this.http.post(environment.apiUrl + '/users/delete', userDelete);
+  }
+
 }

@@ -27,19 +27,24 @@ export class UserListComponent extends UserListView implements OnInit {
     this.loadData = false;
   }
 
-  getDataTable() {
-    this.listUser(DATAFILTERINIT);
-  }
-
-  changeFilter(event) {
-    console.log(event);
-
+  changeFilter(value: any) {
+    this.filter = value;
+    this.userListPresenter.getUsers();
+    this.loadData = false;
   }
 
   changePage(value: any) {
     this.filter.page = value;
     this.userListPresenter.getUsers();
     this.loadData = false;
+  }
+
+  getDataTable() {
+    this.listUser(DATAFILTERINIT);
+  }
+
+  deleteUser(event) {
+    this.userListPresenter.deleteUser(event);
   }
 
 }

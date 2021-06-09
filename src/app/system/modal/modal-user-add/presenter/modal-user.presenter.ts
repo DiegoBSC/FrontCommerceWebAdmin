@@ -26,18 +26,23 @@ export class ModalUserPresenter {
                 this.view.submited = false;
             }
         );
-
     }
 
-    getCompaniesByUser() {
+    async getCompaniesByUser() {
         const idUser = JSON.parse(localStorage.getItem('user')).id;
-        this.companyService.getCompaniesByAdmin(idUser).subscribe((res: any) => {
-            res.forEach(element => {
-                this.view.companiesAdmin.push(element);
-            });
-        }, (error) => {
-            this.view.showError(error.error.message);
-        });
+        await this.companyService.getCompaniesByAdmin(idUser).toPromise().then(
+            (resp: any) => {
+                this.view.companiesAdmin = [];
+                resp.forEach(element => {
+                    this.view.companiesAdmin.push(element);
+                });
+            }
+        ).catch(
+            (error) => {
+                this.view.showError(error.error.message);
+                this.view.submited = false;
+            }
+        );
 
     }
 

@@ -11,6 +11,7 @@ export class MultiselectFieldComponent implements OnInit {
   @Input() primaryKey;
   @Input() textPlaceholder;
   @Input() dropdownListInput;
+  @Input() selectedItemsInit;
   @Output() changeSelectedItems = new EventEmitter<any[]>();
 
   dropdownList = [];
@@ -20,6 +21,7 @@ export class MultiselectFieldComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.selectedItems = this.selectedItemsInit;
     this.dropdownList = this.dropdownListInput;
     this.dropdownSettings = {
       labelKey: this.labelKey,
