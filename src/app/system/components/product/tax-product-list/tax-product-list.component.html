@@ -1,0 +1,50 @@
+<app-breadcrumb [titleRoute]="'Impuestos'"></app-breadcrumb>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card-box">
+            <div class="row d-flex justify-content-end mx-2 my-2">
+                <app-modal-company-add [companySelect]="null" (closetModal)="getDataTable()"></app-modal-company-add>
+            </div>
+            <app-filter-table [documentFilterModel]="filter" (changeFilterEmitt)="changeFilter($event)">
+            </app-filter-table>
+            <div class="table-responsive">
+                <table class="table table-hover table-sm mb-1">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Nombre</th>
+                            <th>Estado</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="taxsItems.length > 0">
+                        <tr
+                            *ngFor="let item of taxsItems| slice: (filter.page-1) * filter.size : filter.page * filter.size; let i = index ">
+                            <td scope="row">{{i + 1}} </td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.status | active}}</td>
+                            <td class="button-list text-center">
+                                <app-modal-company-add [companySelect]="item" (closetModal)="getDataTable()">
+                                </app-modal-company-add>
+                                <app-modal-confirm [itemPk]="item.id" (closetModal)="deleteCompany($event)">
+                                </app-modal-confirm>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <div *ngIf="taxsItems.length === 0 && loadData">
+                        <h1 class="py-2">No Existen Datos</h1>
+                    </div>
+                    <div *ngIf="taxsItems.length === 0 && !loadData">
+                        <h1 class="py-2">Cargando <i class="fas fa-spinner fa-spin"></i></h1>
+                    </div>
+                </table>
+                <!-- <app-paginator [totalElements]="totalElements" [page]="filter.page" [size]="filter.size"
+                    (changePageEmitt)="changePage($event)"></app-paginator> -->
+                <ngb-pagination [(page)]="filter.page" [pageSize]="filter.size" [collectionSize]="taxsItems.length">
+                </ngb-pagination>
+            </div>
+        </div>
+    </div>
+</div>

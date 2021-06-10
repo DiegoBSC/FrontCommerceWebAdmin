@@ -24,8 +24,10 @@ export abstract class View {
         this.toastr.info(message, 'Información', this.options);
     }
     showSuccess(message: string): void  {
-        // tslint:disable-next-line: no-unused-expression
-        this.toastr.success(message), 'Ok', this.options;
+        this.toastr.success(message, 'Ok', this.options);
+    }
+    showWarning(message: string): void  {
+        this.toastr.warning(message, 'Alerta', this.options);
     }
 }
 

@@ -18,6 +18,9 @@ import { ModalUserAddComponent } from './modal/modal-user-add/modal-user-add.com
 import { TagInputModule } from 'ngx-chips';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { MultiselectFieldComponent } from './shared/multiselect-field/multiselect-field.component';
+import { CategoryProductListComponent } from './components/product/category-product-list/category-product-list.component';
+import { TypeProductListComponent } from './components/product/type-product-list/type-product-list.component';
+import { TaxProductListComponent } from './components/product/tax-product-list/tax-product-list.component';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { MultiselectFieldComponent } from './shared/multiselect-field/multiselec
     ModalCompanyAddComponent,
     ModalConfirmComponent,
     ModalUserAddComponent,
-    MultiselectFieldComponent
+    MultiselectFieldComponent,
+    CategoryProductListComponent,
+    TypeProductListComponent,
+    TaxProductListComponent
   ],
   imports: [
     CommonModule,

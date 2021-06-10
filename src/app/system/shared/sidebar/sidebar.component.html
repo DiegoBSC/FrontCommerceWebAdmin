@@ -25,11 +25,11 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="#">Catálogos</a></li>
-                        <li><a href="#">Productos</a></li>
-                        <li><a href="#">Impuestos</a></li>
-                        <li><a href="#">Tipos</a></li>
-                        <li><a href="#">Categorías</a></li>
+                        <li><a class="pointer" >Catálogos</a></li>
+                        <li><a class="pointer" >Productos</a></li>
+                        <li><a class="pointer" [routerLink]="'tax-product-list'">Impuestos</a></li>
+                        <li><a class="pointer" [routerLink]="'type-product-list'">Tipos</a></li>
+                        <li><a class="pointer" [routerLink]="'category-product-list'">Categorías</a></li>
                     </ul>
                 </li>
 
@@ -82,8 +82,8 @@
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="#" [routerLink]="'user-list'" >Usuarios</a></li>
-                        <li><a href="#" [routerLink]="'company-list'">Empresa</a></li>                       
+                        <li><a class="pointer" [routerLink]="'user-list'" >Usuarios</a></li>
+                        <li><a class="pointer" [routerLink]="'company-list'">Empresa</a></li>                       
                     </ul>
                 </li>
 
