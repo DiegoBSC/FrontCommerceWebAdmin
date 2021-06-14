@@ -1,0 +1,32 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Impuestos del Producto</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" [formGroup]="valueForm">
+            <div class="form-group">
+                <div class="col-12">
+                    <label for="username">Nombre: </label>
+                    <input class="form-control" type="text" id="name" formControlName="name"
+                        placeholder="Nombre Categoria">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-12">
+                    <label for="username">Valor: </label>
+                    <input class="form-control" type="text" id="value" formControlName="value"
+                        placeholder="Valor">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary" (click)="modal.close()">Guardar</button>
+    </div>
+</ng-template>
+
+<button *ngIf="taxSelect" class="btn btn-outline-success btn-sm" (click)="open(content)"> <i class="far fa-edit"></i></button>
+<button *ngIf="!taxSelect" class="btn btn-outline-primary btn" (click)="open(content)"><i class="mdi mdi-ticket-percent"></i> Agregar</button>

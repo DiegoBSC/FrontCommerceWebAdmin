@@ -31,14 +31,13 @@ export class TaxProductListPresenter {
     }
 
     filterByTermSearch(termFilter: string) {
-        if (termFilter.length > 2) {
+        if (termFilter.length >= 1) {
             const taxsItemsfilter = this.view.taxsItemsPaginateLocal.filter(item =>
                 item.name.toUpperCase().includes(termFilter.toUpperCase())
             );
             this.view.taxsItems = taxsItemsfilter;
             return;
         }
-        this.view.showWarning('Debe Ingresar mas de 2 caracteres');
         this.getTaxsProduct();
     }
 }

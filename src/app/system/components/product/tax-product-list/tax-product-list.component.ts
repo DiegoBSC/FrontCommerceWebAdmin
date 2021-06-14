@@ -35,4 +35,8 @@ export class TaxProductListComponent extends TaxProductListView implements OnIni
     this.taxProductListPresenter.filterByTermSearch(value.mainFilter);
   }
 
+  deleteTax(idTax) {
+    this.taxProductListPresenter.deleteTaxProduct(idTax);
+  }
+
 }

@@ -3,7 +3,9 @@
     <div class="col-lg-12">
         <div class="card-box">
             <div class="row d-flex justify-content-end mx-2 my-2">
-                <app-modal-company-add [companySelect]="null" (closetModal)="getDataTable()"></app-modal-company-add>
+                <!-- <app-modal-company-add [companySelect]="null" (closetModal)="getDataTable()"></app-modal-company-add> -->
+                <app-modal-tax-product [taxSelect]="null" (closetModal)="getDataTable()">
+                </app-modal-tax-product>
             </div>
             <app-filter-table [documentFilterModel]="filter" (changeFilterEmitt)="changeFilter($event)">
             </app-filter-table>
@@ -13,7 +15,7 @@
                         <tr>
                             <th>#</th>
                             <th>Nombre</th>
-                            <th>Nombre</th>
+                            <th>Valor</th>
                             <th>Estado</th>
                             <th class="text-center">Acciones</th>
                         </tr>
@@ -23,12 +25,12 @@
                             *ngFor="let item of taxsItems| slice: (filter.page-1) * filter.size : filter.page * filter.size; let i = index ">
                             <td scope="row">{{i + 1}} </td>
                             <td>{{item.name}}</td>
-                            <td>{{item.name}}</td>
+                            <td>{{item.valueTax}}</td>
                             <td>{{item.status | active}}</td>
                             <td class="button-list text-center">
-                                <app-modal-company-add [companySelect]="item" (closetModal)="getDataTable()">
-                                </app-modal-company-add>
-                                <app-modal-confirm [itemPk]="item.id" (closetModal)="deleteCompany($event)">
+                                <app-modal-tax-product [taxSelect]="item" (closetModal)="getDataTable()">
+                                </app-modal-tax-product>
+                                <app-modal-confirm [itemPk]="item.id" (closetModal)="deleteTax(item.id)">
                                 </app-modal-confirm>
                             </td>
                         </tr>

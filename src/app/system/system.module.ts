@@ -21,6 +21,9 @@ import { MultiselectFieldComponent } from './shared/multiselect-field/multiselec
 import { CategoryProductListComponent } from './components/product/category-product-list/category-product-list.component';
 import { TypeProductListComponent } from './components/product/type-product-list/type-product-list.component';
 import { TaxProductListComponent } from './components/product/tax-product-list/tax-product-list.component';
+import { ModalTaxProductComponent } from './modal/product/modal-tax-product/modal-tax-product.component';
+import { ModalCategoryProductComponent } from './modal/product/modal-category-product/modal-category-product.component';
+import { ModalTypeProductComponent } from './modal/product/modal-type-product/modal-type-product.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { TaxProductListComponent } from './components/product/tax-product-list/t
     MultiselectFieldComponent,
     CategoryProductListComponent,
     TypeProductListComponent,
-    TaxProductListComponent
+    TaxProductListComponent,
+    ModalTaxProductComponent,
+    ModalCategoryProductComponent,
+    ModalTypeProductComponent
   ],
   imports: [
     CommonModule,
