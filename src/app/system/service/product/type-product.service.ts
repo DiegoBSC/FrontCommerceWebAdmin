@@ -11,18 +11,18 @@ export class TypeProductService {
   constructor(private http: HttpClient) { }
 
   listTypesProduct(){
-    return this.http.get(environment.apiUrl + '/api/typeProduct/findAll');
+    return this.http.get(environment.apiUrl + '/typeProduct/findAll');
   }
 
   findTypesProductById(id: string){
-    return this.http.get(environment.apiUrl + '/api/typeProduct/find?typeProductId=' + id);
+    return this.http.get(environment.apiUrl + '/typeProduct/find?typeProductId=' + id);
   }
 
   createTypeProduct(typeProduct: TypeProductModel){
-    return this.http.post(environment.apiUrl + '/api/typeProduct/create', typeProduct);
+    return this.http.post(environment.apiUrl + '/typeProduct/create', typeProduct);
   }
 
-  deleteTypeProduct(typeProduct: TypeProductModel){
-    return this.http.post(environment.apiUrl + '/api/typeProduct/delete', typeProduct);
+  deleteTypeProduct(idType: string){
+    return this.http.delete(environment.apiUrl + '/typeProduct/delete?typeId=' + idType);
   }
 }

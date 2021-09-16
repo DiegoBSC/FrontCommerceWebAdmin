@@ -11,18 +11,18 @@ export class CategoryProductService {
   constructor(private http: HttpClient) { }
 
   listCategoriesProduct(){
-    return this.http.get(environment.apiUrl + '/api/categoryProduct/findAll');
+    return this.http.get(environment.apiUrl + '/categoryProduct/findAll');
   }
 
   findCategoryProductById(id: string){
-    return this.http.get(environment.apiUrl + '/api/categoryProduct/find?taxProductId=' + id);
+    return this.http.get(environment.apiUrl + '/categoryProduct/find?taxProductId=' + id);
   }
 
   createCategoryProduct(categoryProduct: CategoryProductModel){
-    return this.http.post(environment.apiUrl + '/api/categoryProduct/create', categoryProduct);
+    return this.http.post(environment.apiUrl + '/categoryProduct/create', categoryProduct);
   }
 
-  deleteCategoryProduct(categoryProduct: CategoryProductModel){
-    return this.http.post(environment.apiUrl + '/api/categoryProduct/delete', categoryProduct);
+  deleteCategoryProduct(idCategory: string){
+    return this.http.delete(environment.apiUrl + '/categoryProduct/delete?categoryId=' + idCategory);
   }
 }
