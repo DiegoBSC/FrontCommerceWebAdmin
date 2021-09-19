@@ -8,6 +8,7 @@ import { CompanyListComponent } from './components/company-list/company-list.com
 import { TypeProductListComponent } from './components/product/type-product-list/type-product-list.component';
 import { TaxProductListComponent } from './components/product/tax-product-list/tax-product-list.component';
 import { CategoryProductListComponent } from './components/product/category-product-list/category-product-list.component';
+import { CatalogProductListComponent } from './components/product/catalog-product-list/catalog-product-list.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path: 'type-product-list', component: TypeProductListComponent , canActivate: [AuthGuardService] },
       { path: 'tax-product-list', component: TaxProductListComponent , canActivate: [AuthGuardService] },
       { path: 'category-product-list', component: CategoryProductListComponent , canActivate: [AuthGuardService] },
+      { path: 'catalog-product-list', component: CatalogProductListComponent, canActivate: [AuthGuardService]},
       { path: '**', pathMatch: 'full', redirectTo: 'dashboard' },
     ]
   },

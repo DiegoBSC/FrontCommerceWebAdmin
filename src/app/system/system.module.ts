@@ -24,6 +24,8 @@ import { TaxProductListComponent } from './components/product/tax-product-list/t
 import { ModalTaxProductComponent } from './modal/product/modal-tax-product/modal-tax-product.component';
 import { ModalCategoryProductComponent } from './modal/product/modal-category-product/modal-category-product.component';
 import { ModalTypeProductComponent } from './modal/product/modal-type-product/modal-type-product.component';
+import { CatalogProductListComponent } from './components/product/catalog-product-list/catalog-product-list.component';
+import { ModalCatalogProductComponent } from './modal/product/modal-catalog-product/modal-catalog-product.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { ModalTypeProductComponent } from './modal/product/modal-type-product/mo
     TaxProductListComponent,
     ModalTaxProductComponent,
     ModalCategoryProductComponent,
-    ModalTypeProductComponent
+    ModalTypeProductComponent,
+    CatalogProductListComponent,
+    ModalCatalogProductComponent
   ],
   imports: [
     CommonModule,
