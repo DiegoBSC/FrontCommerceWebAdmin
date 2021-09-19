@@ -7,7 +7,7 @@
     left: 0;
     text-align: center;
     opacity: 0.7;
-    background-color: #98a6ad;
+    background-color: rgba(39, 38, 38, 0.823);
     z-index: 10000;
   }
   
@@ -17,4 +17,5 @@
     left: auto;
     font-size: xx-large;
     z-index: 100;
+    color: white;
   }

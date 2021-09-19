@@ -21,9 +21,7 @@ export class ModalCompanyPresenter {
         this.view.company.userId = user.id;
         await this.companyService.saveCompany(this.view.company).toPromise().then(
             (resp: any) => {
-
                 this.view.showInfo('Registro guardado con éxito');
-
                 this.view.submited = false;
             }
         ).catch(

@@ -13,6 +13,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Tienda</th>
                             <th>Nombre</th>
                             <th>Estado</th>
                             <th class="text-center">Acciones</th>
@@ -22,6 +23,7 @@
                         <tr
                             *ngFor="let item of catalogsItems| slice: (filter.page-1) * filter.size : filter.page * filter.size; let i = index ">
                             <td scope="row">{{i + 1}} </td>
+                            <td>{{item.nameCompany}}</td>
                             <td>{{item.name}}</td>
                             <td>{{item.status | active}}</td>
                             <td class="button-list text-center">

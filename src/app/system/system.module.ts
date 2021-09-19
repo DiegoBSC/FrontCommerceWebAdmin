@@ -27,6 +27,7 @@ import { ModalTypeProductComponent } from './modal/product/modal-type-product/mo
 import { CatalogProductListComponent } from './components/product/catalog-product-list/catalog-product-list.component';
 import { ModalCatalogProductComponent } from './modal/product/modal-catalog-product/modal-catalog-product.component';
 import { LoadingComponent } from '../core/shared/components/loading/loading.component';
+import { ProductListComponent } from './components/product/product-list/product-list.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { LoadingComponent } from '../core/shared/components/loading/loading.comp
     ModalTypeProductComponent,
     CatalogProductListComponent,
     ModalCatalogProductComponent,
-    LoadingComponent
+    LoadingComponent,
+    ProductListComponent
   ],
   imports: [
     CommonModule,

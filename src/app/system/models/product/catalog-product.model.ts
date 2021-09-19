@@ -7,4 +7,5 @@ export interface CatalogProductModel {
     status?: string;
     products?: ProductModel;
     companyId?: string;
+    nameCompany?: string;
 }

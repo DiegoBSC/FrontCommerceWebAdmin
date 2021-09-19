@@ -14,7 +14,6 @@ export class ModalCatalogProductPresenter {
 
     async save(catalogProduct: CatalogProductModel) {
         this.view.catalogProduct = catalogProduct;
-
         await this.catalogProductService.createCatalogProduct(this.view.catalogProduct).toPromise().then(
             (resp: any) => {
                 this.view.showInfo('Registro guardado con éxito');
