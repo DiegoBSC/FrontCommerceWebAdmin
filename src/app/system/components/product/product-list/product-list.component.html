@@ -1,1 +1,53 @@
-<p>product-list works!</p>
+<app-breadcrumb [titleRoute]="'Productos'"></app-breadcrumb>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card-box">
+            <div class="row d-flex justify-content-end mx-2 my-2">
+                <a class="btn btn-outline-primary btn" [routerLink]="'/product-form'">
+                    <i class="mdi mdi-bank-outline"></i> Agregar</a>
+            </div>
+            <app-filter-table [documentFilterModel]="filter"  (changeFilterEmitt)="changeFilter($event)" >
+            </app-filter-table>
+            <div class="table-responsive">
+                <table class="table table-hover table-sm mb-1">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Código</th>
+                            <th>Descripción </th>
+                            <th>Fecha Creación</th>
+                            <th>Estado</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="productsItem.length > 0">
+                        <tr *ngFor="let item of productsItem; let i = index ">
+                            <td scope="row">{{i + 1}} </td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.code}}</td>
+                            <td>{{item.description}}</td>
+                            <td>{{item.createdDate}}</td>
+                            <td>{{item.status | active}}</td>
+                            <td class="button-list text-center">
+                                <a class="btn btn-outline-success btn-sm"  [routerLink]="'[/product-form, item.id]'"> 
+                                    <i class="far fa-edit"></i>
+                                </a>
+                                <app-modal-confirm [itemPk]="item.id" (closetModal)="deleteProduct($event)" >
+                                </app-modal-confirm>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <div *ngIf="productsItem.length === 0 && loadData">
+                        <h4 class="py-2">No Existen Datos</h4>
+                    </div>
+                    <div *ngIf="productsItem.length === 0 && !loadData">
+                        <app-loading></app-loading>
+                    </div>
+                </table>
+                <app-paginator [totalElements]="totalElements" [page]="filter.page" [size]="filter.size"
+                    (changePageEmitt)="changePage($event)"></app-paginator>
+            </div>
+        </div>
+    </div>
+</div>

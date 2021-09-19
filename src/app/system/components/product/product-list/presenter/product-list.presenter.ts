@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { UserModel } from 'src/app/home/models/user.model';
 import { CompanyModel } from 'src/app/system/models/company.model';
 import { ProductListView } from '../product-list.view';
 import { DocumentFilterModel } from '../../../../models/document-filter.model';
@@ -26,6 +25,7 @@ export class ProductListPresenter {
         };
 
         this.productService.listProducts(filter).subscribe((res: PaginatorModel<ProductModel[]>) => {
+            this.view.loadData = true;
             this.view.productsItem = [];
             res.data[0].forEach((e) => {
                 this.view.productsItem.push(e);
@@ -34,10 +34,10 @@ export class ProductListPresenter {
         });
     }
 
-    deleteCompany(id: any) {
-        const companyDelete: CompanyModel = {};
-        companyDelete.id = id;
-        this.productService.deleteProduct(companyDelete).subscribe((res: any) => {
+    deleteProduct(id: any) {
+        const productDelete: ProductModel = {};
+        productDelete.id = id;
+        this.productService.deleteProduct(productDelete).subscribe((res: any) => {
             this.view.showInfo('El producto fue eliminado');
             this.getProducts();
         });

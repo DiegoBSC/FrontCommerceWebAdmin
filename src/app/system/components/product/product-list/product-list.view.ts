@@ -8,4 +8,5 @@ export abstract class ProductListView extends View {
     totalElements: number;
     productsItem: ProductModel[] = [];
     product: ProductModel;
+    loadData: boolean;
 }
