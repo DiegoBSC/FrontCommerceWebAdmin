@@ -28,7 +28,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     SidebarComponent,
     LoginComponent,
     SingupComponent,
-    PreloadComponent,
+    PreloadComponent
   ],
   imports: [
     BrowserModule,

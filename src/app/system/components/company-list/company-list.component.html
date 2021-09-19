@@ -38,7 +38,7 @@
                         <h1 class="py-2">No Existen Datos</h1>
                     </div>
                     <div *ngIf="companiesItem.length === 0 && !loadData">
-                        <h1 class="py-2">Cargando <i class="fas fa-spinner fa-spin"></i></h1>
+                        <app-loading></app-loading>
                     </div>
                 </table>
                 <app-paginator [totalElements]="totalElements" [page]="filter.page" [size]="filter.size"
