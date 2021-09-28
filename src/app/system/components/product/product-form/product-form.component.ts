@@ -13,6 +13,7 @@ export class ProductFormComponent extends ProductFormView implements OnInit {
 
   productId: string;
   title: string;
+  imageProduct: any;
 
   constructor(private route: ActivatedRoute, private productFormPresenter: ProductFormPresenter,
               toastrService: ToastrService) {
@@ -31,6 +32,10 @@ export class ProductFormComponent extends ProductFormView implements OnInit {
       }
     });
     this.loadData = false;
+  }
+
+  imageSelectedAction(event) {
+    this.imageProduct = event;
   }
 
 }

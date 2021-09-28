@@ -25,4 +25,8 @@ export class ProductService {
   deleteProduct(productDelete: any) {
     return this.http.delete(environment.apiUrl + '/product/delete', productDelete);
   }
+
+  productById(productId: any){
+    return this.http.get(environment.apiUrl + '/product/find?productId=' + productId);
+  }
 }

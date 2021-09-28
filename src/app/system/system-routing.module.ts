@@ -10,6 +10,7 @@ import { TaxProductListComponent } from './components/product/tax-product-list/t
 import { CategoryProductListComponent } from './components/product/category-product-list/category-product-list.component';
 import { CatalogProductListComponent } from './components/product/catalog-product-list/catalog-product-list.component';
 import { ProductListComponent } from './components/product/product-list/product-list.component';
+import { ProductFormComponent } from './components/product/product-form/product-form.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'category-product-list', component: CategoryProductListComponent , canActivate: [AuthGuardService] },
       { path: 'catalog-product-list', component: CatalogProductListComponent, canActivate: [AuthGuardService]},
       { path: 'product-list', component: ProductListComponent, canActivate: [AuthGuardService]},
+      { path: 'product-form', component: ProductFormComponent, canActivate: [AuthGuardService]},
       { path: '**', pathMatch: 'full', redirectTo: 'dashboard' },
     ]
   },

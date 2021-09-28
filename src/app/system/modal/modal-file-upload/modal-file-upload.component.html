@@ -1,0 +1,43 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Subir Imagen</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                    <img *ngIf="modalFileUploadPresenter.imagenTemporal" [src]="modalFileUploadPresenter.imagenTemporal"
+                        alt="Imagen" class="w120">
+                </div>
+                <div class="input-group">
+                    <input type="file" (change)="selectedFile($event)">
+                </div>
+
+                <div class="input-group">
+                    <div *ngIf="progreso > 0" class="progress" style="height: 30px; width: 80%;">
+                        <div class="progress-bar progress-bar-striped" role="progressbar"
+                            [ngStyle]="{width:progreso+'%'}" attr.aria-valuenow="{{progreso}}" aria-valuemin="0"
+                            aria-valuemax="100">
+                            {{progreso}}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="successFile()">Aceptar</button>
+    </div>
+</ng-template>
+
+<a *ngIf="viewList" class="pointer" (click)="open(content)">
+    <img src="{{imagePreloaded}}" alt="imagen" class="image-user-list">
+</a>
+
+<a *ngIf="!viewList" class="pointer" (click)="open(content)">
+    <img src="{{imagePreloaded}}" alt="imagen" class="image-user-profile">
+    <p>Imagen Producto</p>
+</a>

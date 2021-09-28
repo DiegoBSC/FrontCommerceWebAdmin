@@ -28,6 +28,8 @@ import { CatalogProductListComponent } from './components/product/catalog-produc
 import { ModalCatalogProductComponent } from './modal/product/modal-catalog-product/modal-catalog-product.component';
 import { LoadingComponent } from '../core/shared/components/loading/loading.component';
 import { ProductListComponent } from './components/product/product-list/product-list.component';
+import { ProductFormComponent } from './components/product/product-form/product-form.component';
+import { ModalFileUploadComponent } from './modal/modal-file-upload/modal-file-upload.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { ProductListComponent } from './components/product/product-list/product-
     CatalogProductListComponent,
     ModalCatalogProductComponent,
     LoadingComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductFormComponent,
+    ModalFileUploadComponent
   ],
   imports: [
     CommonModule,

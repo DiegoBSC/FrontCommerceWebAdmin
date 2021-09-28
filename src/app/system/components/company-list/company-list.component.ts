@@ -4,7 +4,6 @@ import { CompanyListView } from './company-list.view';
 import { ToastrService } from 'ngx-toastr';
 import { DocumentFilterModel } from '../../models/document-filter.model';
 import { DATAFILTERINIT } from '../../shared/utils/utils-data';
-import { CompanyModel } from '../../models/company.model';
 
 @Component({
   selector: 'app-company-list',
