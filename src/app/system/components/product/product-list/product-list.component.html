@@ -15,8 +15,8 @@
                             <th>#</th>
                             <th>Nombre</th>
                             <th>Código</th>
-                            <th>Descripción </th>
-                            <th>Fecha Creación</th>
+                            <th>Tipo </th>
+                            <th>Categoria</th>
                             <th>Estado</th>
                             <th class="text-center">Acciones</th>
                         </tr>
@@ -26,11 +26,11 @@
                             <td scope="row">{{i + 1}} </td>
                             <td>{{item.name}}</td>
                             <td>{{item.code}}</td>
-                            <td>{{item.description}}</td>
-                            <td>{{item.createdDate}}</td>
+                            <td>{{item.typeProduct.name}}</td>
+                            <td>{{item.categoryProduct.name}}</td>
                             <td>{{item.status | active}}</td>
                             <td class="button-list text-center">
-                                <a class="btn btn-outline-success btn-sm"  [routerLink]="'[/product-form, item.id]'"> 
+                                <a class="btn btn-outline-success btn-sm"  [routerLink]="['/product-form', item]"> 
                                     <i class="far fa-edit"></i>
                                 </a>
                                 <app-modal-confirm [itemPk]="item.id" (closetModal)="deleteProduct($event)" >

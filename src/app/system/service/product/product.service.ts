@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { DocumentFilterModel } from '../../models/document-filter.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment.prod';
+import { ProductModel } from '../../models/product/product.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,15 @@ export class ProductService {
     return this.http.delete(environment.apiUrl + '/product/delete', productDelete);
   }
 
-  productById(productId: any){
+  productById(productId: any) {
     return this.http.get(environment.apiUrl + '/product/find?productId=' + productId);
+  }
+
+  saveProduct(productSave: ProductModel, file: File) {
+    let url = environment.apiUrl + '/product/create';
+    if (file) {
+      url = url + '?file=' + file + '&fileType=' + file.type;
+    }
+    return this.http.post(url, productSave);
   }
 }

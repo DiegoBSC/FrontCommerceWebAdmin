@@ -24,6 +24,7 @@ const routes: Routes = [
       { path: 'catalog-product-list', component: CatalogProductListComponent, canActivate: [AuthGuardService]},
       { path: 'product-list', component: ProductListComponent, canActivate: [AuthGuardService]},
       { path: 'product-form', component: ProductFormComponent, canActivate: [AuthGuardService]},
+      { path: 'product-form/:productId', component: ProductFormComponent, canActivate: [AuthGuardService]},
       { path: '**', pathMatch: 'full', redirectTo: 'dashboard' },
     ]
   },
